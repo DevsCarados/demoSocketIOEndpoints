@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test page</title>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.0.0.js"></script>
+  <script>
+    const socket = io('http://localhost:3000', { transports: ['websocket'] });
+    socket.on('secondData', data => {
+      document.getElementById('textFromOSB').innerHTML = data.dataFromOSB;
+    })
+  </script>
+  </head>
+  <body>
+    <button id='button'>Click me!</button><br/>
+    <p>
+      <span>Data from Endpoint => </span><span id="textFromEndpoint"></span>
+    </p>
+    <p>
+      <span>Data from OSB => </span><span id="textFromOSB"></span>
+    </p>
+    <script type="text/javascript">
+      document.getElementById("button").addEventListener("click", function(){
+        const options = { method: 'POST'};
+        axios.post('http://localhost:3000/endpointWithTimeout10seconds', options).then(res => {
+          document.getElementById('textFromEndpoint').innerHTML = res.data.consumeThis;
+        });
+      });
+    </script>
+  </body>
+</html>

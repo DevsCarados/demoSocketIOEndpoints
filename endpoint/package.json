@@ -1,0 +1,24 @@
+{
+  "name": "endpoint",
+  "version": "1.0.0",
+  "description": "Just an endpoint",
+  "main": "server.js",
+  "scripts": {
+    "dev": "PORT=3000 node bin/server.js "
+  },
+  "author": "Jorge Ricaldi",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "sleep": "^5.1.1",
+    "socket.io": "^2.1.0"
+  }
+}

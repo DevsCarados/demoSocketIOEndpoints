@@ -1,0 +1,15 @@
+{
+  "presets": [
+    ["env", {
+      "module": false,
+      "targets": {
+        "node": "current"
+      }
+    }]
+  ],
+  "ignore": [
+    "node_modules/**/*.js",
+    "server/bin/**/*.js"
+  ],
+  "minified": true
+}
