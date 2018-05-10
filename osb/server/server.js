@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false, limit: '10000mb' }));
 app.use(bodyParser.json({ limit: '10000mb' }));
 
-app.post('/endpointOSB15seconds', endpointOSB15seconds);
+app.post('/endpointOSB', endpointOSB15seconds);
 
 app.listen(PORT, () => {
   console.log(`Running OSB in PORT => ${PORT}`);
